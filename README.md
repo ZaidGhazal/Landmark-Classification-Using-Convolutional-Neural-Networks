@@ -19,7 +19,7 @@ The following table explain the training, validation, and testing datasets sizes
 | ----------- | ----------- |
 | Training | 4497 |
 | Validation | 499 |
-| Paragraph | 1250 | 
+| Testing | 1250 | 
 
 Transformation is applied to all datasets to resize and normalize images. Also, the `DataLoader` is used to wrap the datasets.
 The batch size used is 8 images, which means the model is trained on 8 images on each dataloader iteration.
