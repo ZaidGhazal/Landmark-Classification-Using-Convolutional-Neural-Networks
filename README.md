@@ -9,7 +9,7 @@ This Project aims to build a convolutional neural network that classify the land
 
 - Writing a Landmark Prediction Algorithm -  use the best model to create a simple interface for others to be able to use the model to find the most likely landmarks depicted in an image.
 
-Both networks are trained and tested on a subset of `Google landmarks dataset v2`. Accordingly, this is considered as a multi-classification problem where we should train the network on **50 different classes**.
+Both networks are trained and tested on a subset of `Google landmarks dataset v2`[^3] . Accordingly, this is considered as a multi-classification problem where we should train the network on **50 different classes**.
 
 ## Data Preperation
 
@@ -77,3 +77,4 @@ After testing both networks, the first one could only achieve 26$ accurecy and 2
 
 [^2]: [Understanding and visualizing ResNets](https://towardsdatascience.com/understanding-and-visualizing-resnets-442284831be8)
 
+[^3]: [Google Landmarks Dataset v2](https://github.com/cvdfoundation/google-landmark)
