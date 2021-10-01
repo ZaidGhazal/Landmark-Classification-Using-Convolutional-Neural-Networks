@@ -19,7 +19,9 @@ Both networks are trained and tested on a **subset** of `Google landmarks datase
 
 ## Files
 
-- ***landmark.ipy**
+- ***landmark.ipynb**: The jupyter notebook that includes all the work done.
+- **landmark.html**: HTML version of the original notebook.
+- **
 ## Data Preparation
 
 The following table explains the training, validation, and test datasets size:
