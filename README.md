@@ -61,6 +61,10 @@ After looping over the whole batches, the validation process starts to evaluate 
 - Updating the validation loss for the current epoch
 - If the current validataion loss is less than the lowest loss recorded, then save the model and update the lowest (min) validation loss
 
+> The first (scratch) network is trained in 75 epochs. However, the training validation loss started incrasing after the 11th epoch. For the second one (transfer learning), the network is trained for 20 epochs and there was a chance for more training epochs as the validation loss was still decreasing.
+
+
+After testing both networks 
 
 ### From-the-Scratch Network
 
