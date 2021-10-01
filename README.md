@@ -38,7 +38,7 @@ The network here consists of Convolutional, Linear, Maxpool, and Dropout  layers
 Note that the input size should be (800, 800, 3) for each image.
 
 ### Transfer Learning:
-The second network is created by using the pre-trained version of `ResNet34`, which is a 34 layer convolutional neural network that can be utilized as a state-of-the-art image classification model. This netowrk has been trained on the `ImageNet` dataset--a dataset that has 100,000+ images across 200 different classes. 
+The second network is created by using the pre-trained version of `ResNet34`[^2], which is a 34 layer convolutional neural network that can be utilized as a state-of-the-art image classification model. This netowrk has been trained on the `ImageNet` dataset--a dataset that has 100,000+ images across 200 different classes. 
 
 ![ResNet-34 Architecture](assets/ResNet34.png)
 
@@ -73,6 +73,7 @@ After testing both networks, the first one could only achieve 26$ accurecy and 2
 
 ## Refernces
 
-[1]: [Deep learning has a size problem: Shifting from state-of-the-art accuracy to state-of-the-art efficiency](https://heartbeat.comet.ml/deep-learning-has-a-size-problem-ea601304cd8) 
-[2]: [Google-Landmark Recognition with Deep Learning](http://cs230.stanford.edu/projects_spring_2021/reports/7.pdf)
+[^1]: [Deep learning has a size problem: Shifting from state-of-the-art accuracy to state-of-the-art efficiency](https://heartbeat.comet.ml/deep-learning-has-a-size-problem-ea601304cd8) 
+
+[^2]: [Understanding and visualizing ResNets](https://towardsdatascience.com/understanding-and-visualizing-resnets-442284831be8)
 
