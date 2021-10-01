@@ -3,6 +3,7 @@
 ## Project Overview
 
 <p align="justify">
+ 
 This Project aims to build a convolutional neural network that classifies the landmark in the input image using `PyTorch`. The high-level steps of the project include:
 
 - Creating a CNN to Classify Landmarks (from Scratch) - visualize the dataset, process it for training, and then build a convolutional neural network from scratch to classify the landmarks. 
