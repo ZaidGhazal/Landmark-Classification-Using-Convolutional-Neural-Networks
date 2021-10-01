@@ -19,9 +19,11 @@ Both networks are trained and tested on a **subset** of `Google landmarks datase
 
 ## Files
 
-- ***landmark.ipynb**: The jupyter notebook that includes all the work done.
-- **landmark.html**: HTML version of the original notebook.
-- **
+- **landmark.ipynb**: The jupyter notebook that includes all the work done.
+- **landmark.html**: The HTML version of the original notebook.
+- **assets**: Contains images used in this README.
+- **dataset**: The dataset used in this project is not uploaded into this repo. You can download it from [here](https://udacity-dlnfd.s3-us-west-1.amazonaws.com/datasets/landmark_images.zip).
+
 ## Data Preparation
 
 The following table explains the training, validation, and test datasets size:
