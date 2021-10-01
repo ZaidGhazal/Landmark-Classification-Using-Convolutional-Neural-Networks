@@ -42,7 +42,9 @@ The second network is created by using the pre-trained version of `ResNet34`, wh
 
 ![ResNet-34 Architecture](assets/ResNet34.png)
 
-In our case, we could replace the last FC layer to give the desired output classes (50) instead of 1000. The input image size for the network should be (3, 224, 224).
+In our case, we could replace the last FC layer to give the desired output classes (50) instead of 1000, and freeze all the weights excpet for the last layer (FC output layer). Accordingly, the training goal was to update the FC layer weights. 
+
+Note that The input image size for the network should be (224, 224, 3).
 
 ## Training and Testing
 Training process was challeging as it required a powerful GPU to train the networks. We could use `Tesla T4` GPU with 12GB memory to perform training and testing. The training was run for a specific number of epochs for each netowrk. The training process for each epoch can be illsutrated in the following steps:
@@ -63,7 +65,7 @@ After looping over the whole batches, the validation process starts to evaluate 
 
 > The first (scratch) network is trained in 75 epochs. However, the training validation loss started incrasing after the 11th epoch. For the second one (transfer learning), the network is trained for 20 epochs and there was a chance for more training epochs as the validation loss was still decreasing.
 
-![Transfer learning loss plot]("assets/LossPlot.png")
+![Transfer learning loss plot](assets/LossPlot.png)
 
 After testing both networks 
 
