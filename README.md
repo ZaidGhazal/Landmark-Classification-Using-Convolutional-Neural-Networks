@@ -6,20 +6,23 @@
  
 This Project aims to build a convolutional neural network that classifies the landmark in the input image using `PyTorch`. The high-level steps of the project include:
 
-- Creating a CNN to Classify Landmarks (from Scratch) - visualize the dataset, process it for training, and then build a convolutional neural network from scratch to classify the landmarks. 
+- Creating a CNN to Classify Landmarks (from Scratch): Visualizing the dataset, process it for training, and then build a convolutional neural network from scratch to classify the landmarks. 
 
-- Creating a CNN to Classify Landmarks (using Transfer Learning) - investigate different pre-trained models and decide on one to use for this classification task. Along with training and testing this transfer-learned network.
+- Creating a CNN to Classify Landmarks (using Transfer Learning): Investigation of different pre-trained models and decide on one to use for this classification task. Along with training and testing this transfer-learned network.
 
-- Writing a Landmark Prediction Algorithm -  use the best model to create a simple interface for others to be able to use the model to find the most likely landmarks depicted in an image.
+- Writing a Landmark Prediction Algorithm:  By using the best model to create a simple interface for people to be able to use the model to find the most likely landmarks depicted in an image.
 
 Both networks are trained and tested on a **subset** of `Google landmarks dataset v2`[^3]. Accordingly, this is considered as a multi-classification problem where we should train the network on **50 different classes**.
 
 [Download the subset](https://udacity-dlnfd.s3-us-west-1.amazonaws.com/datasets/landmark_images.zip) 
 </p>
 
+## Files
+
+- ***landmark.ipy**
 ## Data Preparation
 
-The following table explains the training, validation, and testing datasets sizes:
+The following table explains the training, validation, and test datasets size:
 
 <center>
 
@@ -38,7 +41,7 @@ The batch size is 8 images, which means the model is trained on 8 images on each
 
 ## Network Architecture
 <p align="justify">
-The project includes creating, training, and testing two neural networks with different architecture. The first one is built from scratch and the other one is created by applying transfer learning. Let's go in deep with each network's details:
+The project includes creating, training, and testing two neural networks with different architectures. The first one is built from the scratch and the other one is created by applying transfer learning. Let's go in deep with each network's details:
 </p>
 
 ### Building from the Scratch:
@@ -46,10 +49,10 @@ The project includes creating, training, and testing two neural networks with di
  
 The network here consists of Convolutional, Linear, Maxpool, and Dropout  layers in addition to ReLU activation function:
 
-- 6 **Convolutional layers**: Used to extract the main features from images.
-- 3 **Linear layers**: Used to classify the images by producing probability distribution, resulting in each class probability for the input image (Multi-class classification).
+- 6 **Convolutional layers**: Used to extract the main and detailed features found in the images.
+- 3 **Linear layers**: Used to classify the images by producing probability distribution, resulting in each class probability result for the input image.
 - 6 **Max-pool layers**: Used to avoid overfitting after each convolutional layer.
-- 2 **Dropout layers**: used after the linear layers to avoid overfitting (Regularization).
+- 2 **Dropout layers**: Used after each linear layer to avoid overfitting (Regularization).
 - **ReLU function**: Used as the activation function for all layers except the last one (the output layer).
 
 Note that the input size should be (800, 800, 3) for each image.
@@ -66,7 +69,7 @@ The second network is created by using the pre-trained version of `ResNet34`[^2]
 
 <p align="justify">
  
-In our case, we could replace the last FC layer to give the desired output classes (50) instead of 1000, and freeze all the weights except for the last layer (FC output layer). Accordingly, the training goal was to update the FC layer weights. 
+In our case, we could replace the last FC (output) layer to give the desired output classes (50) instead of 1000, and freeze all the weights except for the last layer (FC output layer). Accordingly, the training goal was to update the FC layer weights. 
 
 Note that The input image size for the network should be (224, 224, 3).
 
@@ -75,26 +78,26 @@ Note that The input image size for the network should be (224, 224, 3).
 ## Training and Testing
 <p align="justify">
  
-The training process was challenging as it required a powerful GPU to train the networks[^1]. We could use `Tesla T4` GPU with 12GB memory to perform training and testing. The training was run for a specific number of epochs for each network. The training process for each epoch can be illustrated in the following steps:
+The training process was challenging as it required a powerful GPU to train the networks[^1]. We could use `Tesla T4` GPU with 12GB memory to perform training and testing. The training was run for a specific number of epochs for each network. The training process in each epoch can be illustrated in the following steps:
 
 - Taking the batch (8 images) from the training loader.
-- Calculating the output using the feedforward process.
+- Calculating the output using the feed-forward process.
 - Calculating the loss (error).
 - Apply backpropagation to update the network weights.
 - Updating the training loss for the current epoch.
 
-After looping over the whole batches, the validation process starts to evaluate the model performance and avoid overfitting:
+After looping over the whole batches, the validation starts to evaluate the model performance and avoid overfitting:
 
 - Taking the batch (8 images) from the validation loader.
-- Finding the output using the feedforward process by the updated network.
+- Finding the output using the feed-forward process by the trained network.
 - Calculating the loss (error).
 - Updating the validation loss for the current epoch.
-- If the current validation loss is less than the lowest loss recorded, then save the model and update the lowest (min) validation loss.
+- If the current validation loss is less than the minimum loss recorded, then save the model and update the minimum validation loss.
 
 For both networks, the loss and optimization functions were the `CrossEntropyLoss` and `Adam`, respectively.
 </p>
 
-> The first (scratch) network is trained in 75 epochs. However, the training validation loss started increasing after the 11th epoch. For the second one (transfer learning), the network is trained for 20 epochs and there was a chance for more training epochs as the validation loss was still decreasing.
+> The first (scratch) network is trained in 75 epochs. However, the validation loss started increasing after the 11th epoch. For the second one (transfer learning), the network is trained for 20 epochs and there was a chance for more training epochs as the validation loss was still decreasing.
 
 
 <p align="center">
@@ -103,7 +106,7 @@ For both networks, the loss and optimization functions were the `CrossEntropyLos
 
 <!-- ![Transfer learning loss plot](assets/LossPlot.jpg) -->
 
-After testing both networks, the first one could only achieve 26$ accuracy and 2.939369 as a test loss. On the other hand, the modified ResNet could perform better by achieving 74% accuracy and 0.968494 as a test loss. 
+After testing both networks, the first one could only achieve 26% accuracy and 2.939369 as a test loss. On the other hand, the modified ResNet could perform better by achieving 74% accuracy and 0.968494 as a test loss. 
 
 ## References
 
