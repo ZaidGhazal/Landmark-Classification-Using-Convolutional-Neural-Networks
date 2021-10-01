@@ -70,7 +70,11 @@ For both networks, the loss and optimization functions were the `CrossEntropyLos
 
 > The first (scratch) network is trained in 75 epochs. However, the training validation loss started increasing after the 11th epoch. For the second one (transfer learning), the network is trained for 20 epochs and there was a chance for more training epochs as the validation loss was still decreasing.
 
-                                        <div style="text-align:center"><img src="assets/LossPlot.jpg" /></div>
+
+<p align="center">
+  <img width="300" height="300" src="assets/LossPlot.jpg">
+</p>
+
 <!-- ![Transfer learning loss plot](assets/LossPlot.jpg) -->
 
 After testing both networks, the first one could only achieve 26$ accuracy and 2.939369 as a test loss. On the other hand, the modified ResNet could perform better by achieving 74% accuracy and 0.968494 as a test loss. 
