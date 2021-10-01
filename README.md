@@ -1,6 +1,6 @@
 # Landmarks-Classification
 
-## Project Overview
+## :notebook_with_decorative_cover: Project Overview
 
 <p align="justify">
  
@@ -17,14 +17,14 @@ Both networks are trained and tested on a **subset** of `Google landmarks datase
 [Download the subset](https://udacity-dlnfd.s3-us-west-1.amazonaws.com/datasets/landmark_images.zip) 
 </p>
 
-## Files
+## :card_index_dividers: Files
 
 - **landmark.ipynb**: The jupyter notebook that includes all the work done.
 - **landmark.html**: The HTML version of the original notebook.
 - **assets**: Contains images used in this README.
 - **dataset**: The dataset used in this project is not uploaded into this repo. You can download it from [here](https://udacity-dlnfd.s3-us-west-1.amazonaws.com/datasets/landmark_images.zip).
 
-## Data Preparation
+## :black_nib: Data Preparation
 
 The following table explains the training, validation, and test datasets size:
 
@@ -43,7 +43,7 @@ Transformation is applied to all datasets to resize and normalize images. Also, 
 The batch size is 8 images, which means the model is trained on 8 images on each iteration.
 </p>
 
-## Network Architecture
+## :spider_web: Network Architecture
 <p align="justify">
 The project includes creating, training, and testing two neural networks with different architectures. The first one is built from the scratch and the other one is created by applying transfer learning. Let's go in deep with each network's details:
 </p>
@@ -79,7 +79,7 @@ Note that The input image size for the network should be (224, 224, 3).
 
 </p>
 
-## Training and Testing
+## :arrows_counterclockwise: Training and Testing
 <p align="justify">
  
 The training process was challenging as it required a powerful GPU to train the networks[^1]. We could use `Tesla T4` GPU with 12GB memory to perform training and testing. The training was run for a specific number of epochs for each network. The training process in each epoch can be illustrated in the following steps:
@@ -112,7 +112,7 @@ For both networks, the loss and optimization functions were the `CrossEntropyLos
 
 After testing both networks, the first one could only achieve 26% accuracy and 2.939369 as a test loss. On the other hand, the modified ResNet could perform better by achieving 74% accuracy and 0.968494 as a test loss. 
 
-## References
+## :registered: References
 
 [^1]: [Deep learning has a size problem: Shifting from state-of-the-art accuracy to state-of-the-art efficiency](https://heartbeat.comet.ml/deep-learning-has-a-size-problem-ea601304cd8) 
 
