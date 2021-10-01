@@ -72,7 +72,7 @@ For both networks, the loss and optimization functions were the `CrossEntropyLos
 
 
 <p align="center">
-  <img width="300" height="300" src="assets/LossPlot.jpg">
+  <img src="assets/LossPlot.jpg">
 </p>
 
 <!-- ![Transfer learning loss plot](assets/LossPlot.jpg) -->
