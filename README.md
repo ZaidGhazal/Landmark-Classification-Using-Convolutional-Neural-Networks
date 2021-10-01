@@ -47,7 +47,7 @@ In our case, we could replace the last FC layer to give the desired output class
 Note that The input image size for the network should be (224, 224, 3).
 
 ## Training and Testing
-Training process was challeging as it required a powerful GPU to train the networks. We could use `Tesla T4` GPU with 12GB memory to perform training and testing. The training was run for a specific number of epochs for each netowrk. The training process for each epoch can be illsutrated in the following steps:
+Training process was challeging as it required a powerful GPU to train the networks[^1]. We could use `Tesla T4` GPU with 12GB memory to perform training and testing. The training was run for a specific number of epochs for each netowrk. The training process for each epoch can be illsutrated in the following steps:
 
 - Taking the batch (8 images) from the training loader
 - Calculating the output using the feedforward process
@@ -69,9 +69,9 @@ For both networks, the loss and optimization functions were the `CrossEntropyLos
 
 ![Transfer learning loss plot](assets/LossPlot.png)
 
-After testing both networks, the first one could only achieve 26$ accurecy and 2.939369 as a test loss. On the other hand, the modified ResNet could perform better by achieving 74% accurecy and 0.968494 as a test loss[^1]. 
+After testing both networks, the first one could only achieve 26$ accurecy and 2.939369 as a test loss. On the other hand, the modified ResNet could perform better by achieving 74% accurecy and 0.968494 as a test loss. 
 
 ## Refernces
 
-[^1]: My reference.
+[^1]: [Deep learning has a size problem](https://heartbeat.comet.ml/deep-learning-has-a-size-problem-ea601304cd8  
 
