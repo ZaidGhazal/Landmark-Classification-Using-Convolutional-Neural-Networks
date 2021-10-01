@@ -31,11 +31,11 @@ The project includes creating, training, and testing two neural networks with di
 
 ### Building from the Scratch:
 The network here consists of Convolutional, Linear, Maxpool, and Dropout  layers in addition to ReLU activation function:
-- 6 convolutional layers: Used to extract the main features from images.
-- 3 linear layers: Used to classify the images by producing probability distribution, resulting in each class probability for the input image (Multi-class classification).
-- 6 max-pool layers: Used to avoid overfitting after each convolutional layer
-- 2 dropout layers: used after the linear layers to avoid overfitting
-- ReLU function: Used as the activation function for all layers except the last one (the output layer)
+- 6 **Convolutional layers**: Used to extract the main features from images.
+- 3 **Linear layers**: Used to classify the images by producing probability distribution, resulting in each class probability for the input image (Multi-class classification).
+- 6 **Max-pool layers**: Used to avoid overfitting after each convolutional layer
+- 2 **Dropout layers**: used after the linear layers to avoid overfitting (Regularization)
+- **ReLU function**: Used as the activation function for all layers except the last one (the output layer)
 
 Note that the input size should be (800, 800, 3) for each image.
 
