@@ -73,5 +73,6 @@ After testing both networks, the first one could only achieve 26$ accurecy and 2
 
 ## Refernces
 
-[^1]: [Deep learning has a size problem](https://heartbeat.comet.ml/deep-learning-has-a-size-problem-ea601304cd8  
+[^1]: [Deep learning has a size problem: Shifting from state-of-the-art accuracy to state-of-the-art efficiency](https://heartbeat.comet.ml/deep-learning-has-a-size-problem-ea601304cd8) 
+[^2]: [Google-Landmark Recognition with Deep Learning](http://cs230.stanford.edu/projects_spring_2021/reports/7.pdf)
 
