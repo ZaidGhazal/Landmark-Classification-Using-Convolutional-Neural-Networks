@@ -40,6 +40,7 @@ Note that the input size should be (800, 800, 3) for each image.
 ### Transfer Learning:
 The second network is created by uwsing the pre-trained version of `ResNet34`, which is a 34 layer convolutional neural network that can be utilized as a state-of-the-art image classification model. This netowrk has been trained on the `ImageNet` dataset--a dataset that has 100,000+ images across 200 different classes. 
 
+![ResNet-34 Architecture](assets/ResNet34.png)
 ## Training and Testing
 
 
