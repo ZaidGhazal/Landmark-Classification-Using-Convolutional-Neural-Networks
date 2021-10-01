@@ -63,7 +63,7 @@ After looping over the whole batches, the validation process starts to evaluate 
 
 > The first (scratch) network is trained in 75 epochs. However, the training validation loss started incrasing after the 11th epoch. For the second one (transfer learning), the network is trained for 20 epochs and there was a chance for more training epochs as the validation loss was still decreasing.
 
-![Transfer learning loss plot]("assets/Loss plot.png")
+![Transfer learning loss plot]("assets/LossPlot.png")
 
 After testing both networks 
 
