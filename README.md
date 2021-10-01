@@ -25,8 +25,7 @@ Transformation is applied to all datasets to resize and normalize images. Also, 
 The batch size used is 8 images, which means the model is trained on 8 images on each dataloader iteration.
 
 ## Network Architecture
-The project includes creating, training, and testing 2 neural netoworks, one is built from the scratch and the other by applying transfer learning. 
-Lets go in deep with each network's details:
+The project includes creating, training, and testing two neural netoworks with different architecture. The first one is built from the scratch and the other one is created by applying transfer learning. Lets go in deep with each network's details:
 
 ### Building from the Scratch:
 The network here consists of Convolutional, Linear, Maxpool, and Dropout  layers in addtion to ReLU activation function:
@@ -34,12 +33,12 @@ The network here consists of Convolutional, Linear, Maxpool, and Dropout  layers
 - 3 linear layers: Used to classify the images by producing probability distribution, resulting in each class probability for the input image (Multi-class classification).
 - 6 maxpool layers: Used to avoid overfitting after each convolutional layer
 - 2 dropout layers: used after the linear layers to avoid overfitting
-- ReLU function: Used as activation function for all layers except last one (the output layer)
+- ReLU function: Used as activation function for all layers except the last one (the output layer)
 
 Note that the input size should be (800, 800, 3) for each image.
 
 ### Transfer Learning:
-
+The second network is created by uwsing the pre-trained version of `ResNet34`, which is a 34 layer convolutional neural network that can be utilized as a state-of-the-art image classification model. This netowrk has been trained on the `ImageNet` dataset--a dataset that has 100,000+ images across 200 different classes. 
 
 ## Training and Testing
 
