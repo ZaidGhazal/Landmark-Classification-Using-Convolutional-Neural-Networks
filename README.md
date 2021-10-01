@@ -1,6 +1,8 @@
 # Landmarks-Classification
 
 ## Project Overview
+
+<p align="justify">
 This Project aims to build a convolutional neural network that classifies the landmark in the input image using `PyTorch`. The high-level steps of the project include:
 
 - Creating a CNN to Classify Landmarks (from Scratch) - visualize the dataset, process it for training, and then build a convolutional neural network from scratch to classify the landmarks. 
@@ -12,6 +14,7 @@ This Project aims to build a convolutional neural network that classifies the la
 Both networks are trained and tested on a **subset** of `Google landmarks dataset v2`[^3]. Accordingly, this is considered as a multi-classification problem where we should train the network on **50 different classes**.
 
 [Download the subset](https://udacity-dlnfd.s3-us-west-1.amazonaws.com/datasets/landmark_images.zip) 
+</p>
 
 ## Data Preparation
 
@@ -26,13 +29,20 @@ The following table explains the training, validation, and testing datasets size
 | Testing | 1250 | 
  </center>
 
+<p align="justify">
+
 Transformation is applied to all datasets to resize and normalize images. Also, the `DataLoader` is used to wrap the datasets.
 The batch size is 8 images, which means the model is trained on 8 images on each iteration.
+</p>
 
 ## Network Architecture
+<p align="justify">
 The project includes creating, training, and testing two neural networks with different architecture. The first one is built from scratch and the other one is created by applying transfer learning. Let's go in deep with each network's details:
+</p>
 
 ### Building from the Scratch:
+<p align="justify">
+ 
 The network here consists of Convolutional, Linear, Maxpool, and Dropout  layers in addition to ReLU activation function:
 
 - 6 **Convolutional layers**: Used to extract the main features from images.
@@ -42,17 +52,28 @@ The network here consists of Convolutional, Linear, Maxpool, and Dropout  layers
 - **ReLU function**: Used as the activation function for all layers except the last one (the output layer).
 
 Note that the input size should be (800, 800, 3) for each image.
+</p>
 
 ### Transfer Learning:
-The second network is created by using the pre-trained version of `ResNet34`[^2], which is a 34 layer convolutional neural network that can be utilized as a state-of-the-art image classification model. This network has been trained on the `ImageNet` dataset--a dataset that has 100,000+ images across 200 different classes. 
+<p align="justify">
+ 
+The second network is created by using the pre-trained version of `ResNet34`[^2] , which is a 34 layer convolutional neural network that can be utilized as a state-of-the-art image classification model. This network has been trained on the `ImageNet` dataset--a dataset that has 100,000+ images across 200 different classes. 
+
+</p>
 
 ![ResNet-34 Architecture](assets/ResNet34.png)
 
+<p align="justify">
+ 
 In our case, we could replace the last FC layer to give the desired output classes (50) instead of 1000, and freeze all the weights except for the last layer (FC output layer). Accordingly, the training goal was to update the FC layer weights. 
 
 Note that The input image size for the network should be (224, 224, 3).
 
+</p>
+
 ## Training and Testing
+<p align="justify">
+ 
 The training process was challenging as it required a powerful GPU to train the networks[^1]. We could use `Tesla T4` GPU with 12GB memory to perform training and testing. The training was run for a specific number of epochs for each network. The training process for each epoch can be illustrated in the following steps:
 
 - Taking the batch (8 images) from the training loader.
@@ -70,6 +91,7 @@ After looping over the whole batches, the validation process starts to evaluate 
 - If the current validation loss is less than the lowest loss recorded, then save the model and update the lowest (min) validation loss.
 
 For both networks, the loss and optimization functions were the `CrossEntropyLoss` and `Adam`, respectively.
+</p>
 
 > The first (scratch) network is trained in 75 epochs. However, the training validation loss started increasing after the 11th epoch. For the second one (transfer learning), the network is trained for 20 epochs and there was a chance for more training epochs as the validation loss was still decreasing.
 
