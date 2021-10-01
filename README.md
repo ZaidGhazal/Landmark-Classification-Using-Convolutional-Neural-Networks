@@ -9,7 +9,9 @@ This Project aims to build a convolutional neural network that classify the land
 
 - Writing a Landmark Prediction Algorithm -  use the best model to create a simple interface for others to be able to use the model to find the most likely landmarks depicted in an image.
 
-Both networks are trained and tested on a subset of `Google landmarks dataset v2`[^3] . Accordingly, this is considered as a multi-classification problem where we should train the network on **50 different classes**.
+Both networks are trained and tested on a **subset** of `Google landmarks dataset v2`[^3] . Accordingly, this is considered as a multi-classification problem where we should train the network on **50 different classes**.
+
+[Download the subset](https://udacity-dlnfd.s3-us-west-1.amazonaws.com/datasets/landmark_images.zip) 
 
 ## Data Preperation
 
