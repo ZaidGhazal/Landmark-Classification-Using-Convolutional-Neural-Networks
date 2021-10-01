@@ -17,11 +17,14 @@ Both networks are trained and tested on a **subset** of `Google landmarks datase
 
 The following table explains the training, validation, and testing datasets sizes:
 
+<center>
+
 | Dataset | #_of_images |
 | ----------- | ----------- |
 | Training | 4497 |
 | Validation | 499 |
 | Testing | 1250 | 
+ </center>
 
 Transformation is applied to all datasets to resize and normalize images. Also, the `DataLoader` is used to wrap the datasets.
 The batch size is 8 images, which means the model is trained on 8 images on each iteration.
