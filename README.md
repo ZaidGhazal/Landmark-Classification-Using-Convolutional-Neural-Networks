@@ -31,11 +31,12 @@ The project includes creating, training, and testing two neural networks with di
 
 ### Building from the Scratch:
 The network here consists of Convolutional, Linear, Maxpool, and Dropout  layers in addition to ReLU activation function:
+
 - 6 **Convolutional layers**: Used to extract the main features from images.
 - 3 **Linear layers**: Used to classify the images by producing probability distribution, resulting in each class probability for the input image (Multi-class classification).
-- 6 **Max-pool layers**: Used to avoid overfitting after each convolutional layer
-- 2 **Dropout layers**: used after the linear layers to avoid overfitting (Regularization)
-- **ReLU function**: Used as the activation function for all layers except the last one (the output layer)
+- 6 **Max-pool layers**: Used to avoid overfitting after each convolutional layer.
+- 2 **Dropout layers**: used after the linear layers to avoid overfitting (Regularization).
+- **ReLU function**: Used as the activation function for all layers except the last one (the output layer).
 
 Note that the input size should be (800, 800, 3) for each image.
 
@@ -51,19 +52,19 @@ Note that The input image size for the network should be (224, 224, 3).
 ## Training and Testing
 The training process was challenging as it required a powerful GPU to train the networks[^1]. We could use `Tesla T4` GPU with 12GB memory to perform training and testing. The training was run for a specific number of epochs for each network. The training process for each epoch can be illustrated in the following steps:
 
-- Taking the batch (8 images) from the training loader
-- Calculating the output using the feedforward process
-- Calculating the loss (error)
-- Apply backpropagation to update the network weights
-- Updating the training loss for the current epoch
+- Taking the batch (8 images) from the training loader.
+- Calculating the output using the feedforward process.
+- Calculating the loss (error).
+- Apply backpropagation to update the network weights.
+- Updating the training loss for the current epoch.
 
 After looping over the whole batches, the validation process starts to evaluate the model performance and avoid overfitting:
 
-- Taking the batch (8 images) from the validation loader
-- Finding the output using the feedforward process by the updated network
-- Calculating the loss (error)
-- Updating the validation loss for the current epoch
-- If the current validation loss is less than the lowest loss recorded, then save the model and update the lowest (min) validation loss
+- Taking the batch (8 images) from the validation loader.
+- Finding the output using the feedforward process by the updated network.
+- Calculating the loss (error).
+- Updating the validation loss for the current epoch.
+- If the current validation loss is less than the lowest loss recorded, then save the model and update the lowest (min) validation loss.
 
 For both networks, the loss and optimization functions were the `CrossEntropyLoss` and `Adam`, respectively.
 
